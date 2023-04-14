@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login|Form|CreateAccount</title>
+    <link rel="stylesheet" href="ass.css">
+    <script src="ass.js"></script>
+</head>
+<body>
+    <div class="login-container">
+        <div class="header">
+            <h1>GORZILAA</h1>
+        </div>
+        <div class="formField">
+
+            <form id="form" action="">
+                <label for="fname">FirstName:</label>
+                <input type="text" id="fname"  placeholder="Enter Firstname" required>
+                <small id="small"></small>
+                <label for="lname">LastName:</label>
+                <input type="text" id="lname" placeholder="Enter Lastname" required>
+                <small id="small2"></small>
+                <label for="pword">Password:</label>
+                <input type="number" id="pword" placeholder="Enter Password" required>
+                <small id="small3"></small>
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Enter email address" required>
+                <small id="small4"></small>
+             
+              
+                    
+                
+                <label for="country">Country:</label>
+                <select name="country" id="Choose your Country" required>
+                    <option value="">Choose your Country</option>
+                    <option value="">Burkina Faso</option>
+                    <option value="">Chad</option>
+                    <option value="">South Korea</option>
+                    <option value="">Netherlands</option>
+                    <option value="">Cameroon</option>
+                    <option value="">Austria</option>
+                    <option value="">Canada</option>
+                    <option value="">United Kingdom</option>
+                    <option value="">United States of America</option>
+                    <option value="">Togo</option>
+                    <option value="">Nigeria</option>
+                    <option value="">Tunisia</option>
+                    <option value="">Zimbabwe</option>
+                </select>
+                <button type="submit" id="submit">Submit</button>
+
+                
+            </form>
+        </div>    
+
+        <!-- javascript code -->
+        <script>
+// Select the form element
+   const form = document.getElementById('form');
+
+// Select the input fields that need to be validated
+    const nameInput = document.getElementById('fname');
+    const name2Input = document.getElementById('lname');
+    const emailInput = document.getElementById('email');
+    const passwordInput = document.getElementById('pword');
+
+// Add an event listener to the form when it's submitted
+    form.addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting
+
+  // Check if the name field is empty
+  if (nameInput.value === '') {
+    alert('Please enter your name.');
+    return;
+  }
+
+  // Check if the email field is empty or not a valid email address
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (emailInput.value === '' || !emailRegex.test(emailInput.value)) {
+    alert('Please enter a valid email address.');
+    return;
+  }
+
+  // Check if the password field is empty or less than 8 characters
+    if (passwordInput.value === '' || passwordInput.value.length < 8) {
+        alert('Please enter a password that is at least 8 characters long.');
+    return;
+  }
+
+  // If all validation passes, submit the form
+  alert('Form submitted successfully!');
+  form.submit();
+});
+
+
+
+
+
+     </script>
+</body>
+</html>
